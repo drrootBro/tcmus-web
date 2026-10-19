@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>葛根 Gegen · 神农本草经精要 | tcmus.net</title>
+<meta name="description" content="葛根：神农本草经原文、性味归经、系统生物学解读、经典配伍。tcmus.net 中医经典之方知识库。">
+<link rel="canonical" href="https://tcmus.net/tcm/bencao/gegen.html">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1612;--ink-soft:#4a453f;--ink-muted:#8a857d;
+  --paper:#faf8f4;--paper-warm:#f0ebe0;--paper-card:#fffdf9;
+  --brush:#8b3a2a;--brush-light:rgba(139,58,42,0.08);
+  --teal:#2a6b5e;--teal-light:rgba(42,107,94,0.08);
+  --gold:#b8942a;--gold-light:rgba(184,148,42,0.10);
+  --border:rgba(26,22,18,0.10);--border-warm:rgba(139,58,42,0.15);
+}
+body{font-family:'Georgia',serif;background:var(--paper);color:var(--ink);overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 10% 20%,rgba(139,58,42,0.03) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 90% 80%,rgba(42,107,94,0.03) 0%,transparent 60%);pointer-events:none;z-index:0}
+.page-rule{position:fixed;left:48px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border-warm) 20%,var(--border-warm) 80%,transparent);z-index:0}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:64px 40px 80px 80px;animation:fadeUp .5s ease both}
+.topbar{display:flex;align-items:center;gap:16px;margin-bottom:48px}
+.back{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
+.back::before{content:'';display:inline-block;width:16px;height:1px;background:var(--ink-muted);transition:all .2s}
+.back:hover{color:var(--teal)}.back:hover::before{background:var(--teal);width:24px}
+.topbar-rule{flex:1;height:1px;background:var(--border)}
+.topbar-num{font-family:monospace;font-size:10px;letter-spacing:.2em;color:var(--ink-muted)}
+.herb-image-block{margin-bottom:2px;position:relative;overflow:hidden;border:1px solid var(--border)}
+.herb-image-block img{width:100%;display:block;object-fit:contain;aspect-ratio:5/2;background:#f5f0e8}
+.herb-image-block.placeholder{aspect-ratio:5/2;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.placeholder-glyph{font-size:48px;color:var(--border-warm);line-height:1}
+.placeholder-text{font-family:monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-muted)}
+.image-caption{padding:10px 16px;background:var(--paper-card);border:1px solid var(--border);border-top:none;font-family:monospace;font-size:9px;letter-spacing:.15em;color:var(--ink-muted);display:flex;justify-content:space-between}
+.identity-bar{display:grid;grid-template-columns:auto 1px auto;gap:32px;align-items:start;background:var(--paper-card);border:1px solid var(--border);border-top:none;padding:28px 28px 24px;margin-bottom:2px}
+.herb-label{font-family:monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.herb-label::before{content:'';display:inline-block;width:16px;height:1px;background:var(--teal)}
+.herb-names{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.herb-cn{font-size:48px;font-weight:400;line-height:1;color:var(--ink);letter-spacing:.05em}
+.herb-pinyin{font-family:monospace;font-size:18px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal)}
+.herb-en{font-size:14px;color:var(--ink-muted);margin-top:6px}
+.herb-latin{font-size:12px;font-style:italic;color:var(--ink-muted);opacity:.7;margin-top:2px}
+.id-divider{width:1px;background:var(--border);align-self:stretch}
+.id-meta{display:flex;flex-direction:column;gap:10px;min-width:180px}
+.meta-row{display:flex;gap:10px;align-items:baseline}
+.meta-key{font-family:monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted);min-width:52px;flex-shrink:0}
+.meta-val{font-size:13px;color:var(--ink-soft);line-height:1.5}
+.meta-tags{display:flex;flex-wrap:wrap;gap:5px}
+.meta-tag{font-family:monospace;font-size:9px;letter-spacing:.1em;padding:2px 7px;border:1px solid var(--border);border-radius:1px;color:var(--ink-muted)}
+.meta-tag.teal{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
+.sections{display:flex;flex-direction:column;gap:2px}
+.section{background:var(--paper-card);border:1px solid var(--border);padding:28px 28px 24px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-icon{width:3px;height:16px;border-radius:2px;flex-shrink:0}
+.si-classic{background:var(--gold)}.si-science{background:var(--teal)}.si-formula{background:var(--brush)}
+.section-title{font-family:monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-muted)}
+.section-title-cn{font-size:13px;color:var(--ink-muted);margin-left:4px}
+.classic-quote{background:var(--paper-warm);border-left:2px solid var(--gold);padding:16px 20px;margin-bottom:14px}
+.classic-quote p{font-size:16px;line-height:1.9;color:var(--ink);letter-spacing:.05em}
+.classic-note{font-size:13px;line-height:1.8;color:var(--ink-soft);padding-left:4px}
+.classic-note strong{color:var(--gold);font-weight:normal}
+.science-text{font-size:15px;line-height:1.9;color:var(--ink-soft)}
+.science-text strong{color:var(--ink);font-weight:normal;border-bottom:1px solid var(--teal)}
+.compound-box{margin-top:14px;background:var(--teal-light);border:1px solid rgba(42,107,94,0.15);padding:14px 18px}
+.compound-name{font-family:monospace;font-size:11px;letter-spacing:.12em;color:var(--teal);margin-bottom:4px}
+.compound-desc{font-size:13px;color:var(--ink-soft);line-height:1.7}
+.formula-grid{display:flex;flex-wrap:wrap;gap:8px}
+.formula-tag{font-family:monospace;font-size:10px;letter-spacing:.12em;padding:6px 14px;border:1px solid var(--border);border-radius:1px;color:var(--ink-soft);text-decoration:none;transition:all .15s;display:inline-block}
+.formula-tag:hover{border-color:var(--brush);color:var(--brush);background:var(--brush-light)}
+.formula-tag.highlight{border-color:var(--brush);color:var(--brush);background:var(--brush-light)}
+.herb-nav{margin-top:2px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border)}
+.herb-nav-item{background:var(--paper-card);padding:16px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:4px;transition:background .2s}
+.herb-nav-item:hover{background:var(--paper-warm)}
+.herb-nav-dir{font-family:monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted)}
+.herb-nav-name{font-size:16px;color:var(--ink)}
+.herb-nav-item.next{text-align:right}
+footer{margin-top:48px;display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid var(--border)}
+.footer-text{font-family:monospace;font-size:10px;letter-spacing:.15em;color:var(--ink-muted)}
+.footer-glyph{font-size:26px;color:var(--border-warm)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){
+  .page-rule{display:none}.wrap{padding:40px 20px}
+  .herb-image-block img,.herb-image-block{aspect-ratio:3/2}
+  .identity-bar{grid-template-columns:1fr;gap:20px}
+  .id-divider{display:none}.herb-cn{font-size:36px}
+}
+.tcmus-nav{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:14px 40px 0 80px;font-family:monospace;font-size:10px;letter-spacing:.14em;color:var(--ink-muted);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tcmus-nav a{color:var(--ink-soft);text-decoration:none}
+.tcmus-nav a:hover{color:var(--brush)}
+.tn-sep{color:var(--border-warm)}
+@media(max-width:680px){.tcmus-nav{padding:12px 20px 0}}
+</style>
+</head>
+<body>
+<div class="tcmus-nav"><a href="/">&larr; tcmus.net</a><span class="tn-sep">·</span><a href="/">首页</a><a href="/xuewei/">穴位自查</a><a href="/xue/01.html">中医入门</a><a href="/tcm/" style="color:var(--brush)">经典之方</a><a href="/bikeng/03.html">避坑指南</a><a href="/yanxuan/">严选</a><a href="/huangye/">黄页</a><a href="/about/">关于</a><a href="/fankui/">反馈</a></div>
+<div class="page-rule"></div>
+<div class="wrap">
+
+<div class="topbar">
+  <a href="/tcm/bencao/index.html" class="back">神农本草经</a>
+  <div class="topbar-rule"></div>
+  <span class="topbar-num">005 / 030</span>
+</div>
+
+<div class="herb-image-block">
+  <img src="images/gegen.jpg" alt="葛根">
+</div>
+<div class="image-caption">
+  <span>Puerariae Radix · Kudzu Root</span>
+  <span>Plate 005</span>
+</div>
+
+<div class="identity-bar">
+  <div class="id-main">
+    <div class="herb-label">Puerariae Radix</div>
+    <div class="herb-names">
+      <span class="herb-cn">葛根</span>
+      <span class="herb-pinyin">Gegen</span>
+    </div>
+    <div class="herb-en">Kudzu Root</div>
+    <div class="herb-latin">Radix Puerariae Lobatae</div>
+  </div>
+  <div class="id-divider"></div>
+  <div class="id-meta">
+    <div class="meta-row"><span class="meta-key">性味</span><span class="meta-val">甘、辛，凉</span></div>
+    <div class="meta-row"><span class="meta-key">归经</span><span class="meta-val">脾、胃、肺</span></div>
+    <div class="meta-row">
+      <span class="meta-key">功效</span>
+      <div class="meta-tags"><span class="meta-tag teal">解表</span><span class="meta-tag teal">生津</span><span class="meta-tag">升阳</span><span class="meta-tag">透疹</span></div>
+    </div>
+    <div class="meta-row"><span class="meta-key">六经</span><span class="meta-val">太阳阳明合病</span></div>
+  </div>
+</div>
+
+<div class="sections">
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon si-classic"></div>
+      <span class="section-title">The Classic</span>
+      <span class="section-title-cn">神农本草经原文</span>
+    </div>
+    <div class="classic-quote"><p>「味甘平。主消渴，身大热，呕吐，诸痹，起阴气，解诸毒。」</p></div>
+    <div class="classic-note"><strong>根哥注 —</strong> "项背强几几"是葛根汤的核心指征。葛根专入项背，现代研究发现其改善椎-基底动脉供血，与颈项肌肉痉挛的缓解直接相关。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon si-science"></div>
+      <span class="section-title">PhD Insight</span>
+      <span class="section-title-cn">系统生物学视角</span>
+    </div>
+    <div class="science-text">核心成分<strong>葛根素（Puerarin）</strong>是天然的<strong>β受体阻断剂</strong>，同时具有扩张脑血管和冠状动脉的作用，对颈项部微循环有选择性改善效果。</div>
+    <div class="compound-box">
+      <div class="compound-name">Puerarin · 葛根素</div>
+      <div class="compound-desc">β受体部分阻断 → 血管平滑肌松弛 → 椎-基底动脉血流↑ → 项背肌群供血改善。同时激活GLUT4 → 血糖摄取↑（对应"消渴"）。</div>
+    </div>
+    <div class="science-text" style="margin-top:14px">葛根的"升阳止泻"在太阳阳明合病中的意义：<strong>葛根素</strong>对肠道平滑肌有双向调节作用，既能升提清阳（止泻），又不影响正常肠蠕动，是经方中少见的肠道调节药。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon si-formula"></div>
+      <span class="section-title">Logic Pairing</span>
+      <span class="section-title-cn">经典配伍</span>
+    </div>
+    <div class="formula-grid"><a href="/tcm/shanghan/free.html" class="formula-tag highlight">葛根汤</a><span class="formula-tag">葛根芩连汤</span><span class="formula-tag">桂枝加葛根汤</span><span class="formula-tag">葛根加半夏汤</span></div>
+  </div>
+</div>
+
+<div class="herb-nav">
+  <a href="banxia.html" class="herb-nav-item" >
+    <span class="herb-nav-dir">← 上一味</span>
+    <span class="herb-nav-name">半夏 Banxia</span>
+  </a>
+  <a href="shaoyao.html" class="herb-nav-item next" >
+    <span class="herb-nav-dir">下一味 →</span>
+    <span class="herb-nav-name">芍药 Shaoyao</span>
+  </a>
+</div>
+
+<p style="margin-top:32px;padding:18px 20px;border:1px solid var(--border-warm);background:var(--brush-light);font-size:13px;line-height:1.8;color:var(--ink-soft)">⚠️ <strong>安全声明：</strong>本页为中医经典学习资料，仅供了解中医文化，不构成诊断、用药建议或治疗承诺。药材使用需在持牌中医师指导下进行，切勿自行配药服用。</p>
+<footer>
+  <span class="footer-text">TCMUS.NET · 神农本草经精要 · 中医经典之方</span>
+  <span class="footer-glyph">草</span>
+</footer>
+</div>
+</body>
+</html>
