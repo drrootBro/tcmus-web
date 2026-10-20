@@ -8,9 +8,6 @@
 <link rel="canonical" href="https://tcmus.net/tcm/fuqingzhu/">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
-
   :root {
     --ink: #1a1008;
     --ink-light: #4a3828;
@@ -37,18 +34,156 @@
       radial-gradient(ellipse at 80% 90%, rgba(46,107,79,0.05) 0%, transparent 60%);
   }
 
-  /* === HEADER === */
-  header {
-    background: var(--ink);
-    padding: 28px 40px;
+  /* ── TOP NAV ── */
+  .rb-nav {
+    background: #1a1612;
+    padding: 10px 40px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+    border-bottom: 1px solid rgba(139,58,42,0.3);
+  }
+  .rb-nav a {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #8a857d;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color .2s;
+  }
+  .rb-nav a:hover { color: #b8942a; }
+  .rb-nav a::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 1px;
+    background: currentColor;
+  }
+  .rb-nav-sep { font-family: monospace; font-size: 11px; color: rgba(200,184,154,0.35); }
+
+  /* ── LANDING SECTION ── */
+  .landing {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 20px;
+  }
+  .landing-header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .landing-label {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: #8a857d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .landing-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: #8a857d;
+  }
+  .landing-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(26px, 3.8vw, 36px);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: .02em;
+  }
+  .landing-sub {
+    font-size: 14.5px;
+    color: var(--ink-light);
+    line-height: 1.8;
+  }
+
+  /* ── FEATURES (01 / 02 / 03) ── */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .feat {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: transform .2s, border-color .2s;
+  }
+  .feat:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .feat-num {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    color: var(--gold);
+    background: rgba(184,134,11,0.12);
+    width: fit-content;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .feat-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: .04em;
+    margin-bottom: 8px;
+  }
+  .feat-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+
+  /* ── DISCLAIMERS (统一规范) ── */
+  .disclaimer {
+    background: #fff8e1;
+    border-left: 4px solid var(--gold);
+    border-top: 1px solid rgba(184,134,11,0.25);
+    border-right: 1px solid rgba(184,134,11,0.25);
+    border-bottom: 1px solid rgba(184,134,11,0.25);
+    padding: 13px 18px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* ── TOOL HEADER ── */
+  header.tool-header {
+    background: var(--ink);
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
     border-bottom: 3px solid var(--gold);
+    border-radius: 8px 8px 0 0;
     position: relative;
     overflow: hidden;
   }
-  header::before {
+  header.tool-header::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -57,13 +192,16 @@
     );
   }
   .header-seal {
-    width: 56px; height: 56px;
+    width: 48px;
+    height: 48px;
     background: var(--red);
     border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Noto Serif SC', serif;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: -2px;
     flex-shrink: 0;
     box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
@@ -71,39 +209,41 @@
   .header-text h1 {
     font-family: 'Noto Serif SC', serif;
     color: var(--paper);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
   .header-text p {
     color: var(--gold-light);
     font-size: 12px;
-    letter-spacing: 2px;
-    margin-top: 4px;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
   }
 
-  /* === LAYOUT === */
-  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
-
-  .disclaimer {
-    background: #fff8e1;
-    border-left: 4px solid var(--gold);
-    padding: 12px 16px;
-    border-radius: 0 6px 6px 0;
-    font-size: 12px;
-    color: var(--ink-light);
-    margin-bottom: 28px;
-    line-height: 1.6;
+  /* ── TOOL CONTAINER ── */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .tool-wrapper {
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .tool-body {
+    background: var(--paper);
+    padding: 24px 0 0;
   }
 
   .main-grid {
     display: grid;
     grid-template-columns: 380px 1fr;
-    gap: 28px;
+    gap: 24px;
     align-items: start;
   }
 
-  /* === SYMPTOM PANEL === */
+  /* ── SYMPTOM PANEL ── */
   .panel {
     background: white;
     border: 1px solid var(--border);
@@ -119,7 +259,8 @@
     gap: 10px;
   }
   .panel-header .dot {
-    width: 8px; height: 8px;
+    width: 8px;
+    height: 8px;
     background: var(--gold);
     border-radius: 50%;
     flex-shrink: 0;
@@ -133,15 +274,15 @@
   }
   .panel-body { padding: 20px; }
 
-  /* === CATEGORY TABS === */
+  /* ── CATEGORY TABS ── */
   .cat-tabs {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     flex-wrap: wrap;
     margin-bottom: 16px;
   }
   .cat-tab {
-    padding: 5px 12px;
+    padding: 6px 13px;
     border: 1px solid var(--border);
     border-radius: 20px;
     font-size: 12px;
@@ -162,7 +303,7 @@
     border-color: var(--gold);
   }
 
-  /* === SYMPTOM GROUPS === */
+  /* ── SYMPTOM GROUPS ── */
   .symptom-group { display: none; }
   .symptom-group.visible { display: block; }
 
@@ -194,7 +335,7 @@
   }
   .symptom-val.zero { background: var(--border); color: var(--ink-light); }
 
-  /* === SLIDERS === */
+  /* ── SLIDERS ── */
   .slider-track {
     position: relative;
     padding: 2px 0;
@@ -210,7 +351,8 @@
   }
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 16px; height: 16px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: white;
     border: 2px solid var(--jade);
@@ -228,7 +370,7 @@
     margin-top: 3px;
   }
 
-  /* Toggle for boolean */
+  /* ── TOGGLE FOR BOOLEAN ── */
   .toggle-wrap {
     display: flex;
     gap: 6px;
@@ -248,7 +390,7 @@
   .toggle-btn.selected-no { background: var(--paper-dark); border-color: var(--border); color: var(--ink-light); }
   .toggle-btn.selected-yes { background: var(--jade); border-color: var(--jade); color: white; }
 
-  /* === ACTION BUTTONS === */
+  /* ── ACTION BUTTONS ── */
   .btn-row {
     display: flex;
     gap: 10px;
@@ -284,7 +426,7 @@
   }
   .btn-reset:hover { border-color: var(--red); color: var(--red); }
 
-  /* === RESULTS PANEL === */
+  /* ── RESULTS PANEL ── */
   .results-area { min-height: 400px; }
 
   .empty-state {
@@ -304,7 +446,7 @@
   .empty-state p { font-size: 14px; line-height: 1.7; }
   .empty-state strong { color: var(--jade); }
 
-  /* === RESULT CARDS === */
+  /* ── RESULT CARDS ── */
   .result-card {
     background: white;
     border: 1px solid var(--border);
@@ -328,9 +470,12 @@
     cursor: pointer;
   }
   .rank-badge {
-    width: 28px; height: 28px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 13px;
     font-weight: 700;
     flex-shrink: 0;
@@ -382,8 +527,13 @@
   }
   .rank-1 .score-fill { background: var(--gold); }
 
-  /* === CARD BODY === */
-  .card-body { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  /* ── CARD BODY ── */
+  .card-body {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
   .card-body.open { max-height: 1200px; padding: 20px; }
 
   .matched-symptoms {
@@ -416,7 +566,8 @@
   }
   .section-title::before {
     content: '';
-    width: 3px; height: 14px;
+    width: 3px;
+    height: 14px;
     background: var(--jade);
     border-radius: 2px;
     display: inline-block;
@@ -485,201 +636,128 @@
     letter-spacing: 1px;
   }
 
-  /* === RESPONSIVE === */
-  @media (max-width: 768px) {
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
     .main-grid { grid-template-columns: 1fr; }
-    .container { padding: 16px; }
-    header { padding: 18px 20px; }
+    .features { grid-template-columns: 1fr; }
+    .landing { padding: 32px 18px 16px; }
+    .container { padding: 0 18px 48px; }
+    header.tool-header { padding: 18px 20px; }
+    .rb-nav { padding: 10px 18px; }
   }
-
-
-/* ── ROOTBRO NAV ── */
-.rb-nav{background:#1a1612;padding:10px 40px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,58,42,0.3)}
-.rb-nav a{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8a857d;text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
-.rb-nav a:hover{color:#b8942a}
-.rb-nav a::before{content:'';display:inline-block;width:14px;height:1px;background:currentColor}
-.rb-nav-sep{font-family:monospace;font-size:10px;color:rgba(200,184,154,0.25)}
-.rb-nav-cur{font-family:monospace;font-size:10px;letter-spacing:.15em;color:#b8860b}
-
-/* ── LANDING ── */
-.landing{max-width:860px;margin:0 auto;padding:48px 32px 64px}
-.landing-label{font-family:monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8a857d;display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.landing-label::before{content:'';display:inline-block;width:20px;height:1px;background:#8a857d}
-.landing-title{font-family:'Noto Serif SC',serif;font-size:40px;font-weight:400;line-height:1.15;color:#1a1008;margin-bottom:12px;letter-spacing:.03em}
-.landing-sub{font-size:15px;color:#6b5c4a;line-height:1.8;margin-bottom:36px}
-
-/* video */
-.video-wrap{position:relative;background:#1a1008;border:1px solid #c8b89a;border-radius:4px;overflow:hidden;margin-bottom:36px}
-.video-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:none}
-.video-placeholder{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;cursor:pointer;background:#1a1008}
-.video-play{width:60px;height:60px;border-radius:50%;background:rgba(184,134,11,0.15);border:1px solid rgba(184,134,11,0.4);display:flex;align-items:center;justify-content:center;transition:all .2s}
-.video-play:hover{background:rgba(184,134,11,0.25);transform:scale(1.05)}
-.play-tri{width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #b8860b;margin-left:4px}
-.video-caption{font-family:monospace;font-size:11px;letter-spacing:.15em;color:rgba(200,184,154,0.5)}
-.video-tag{position:absolute;top:14px;left:16px;font-family:monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(184,134,11,0.15);color:#b8860b;border:1px solid rgba(184,134,11,0.3);padding:3px 10px;border-radius:2px}
-
-/* features */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(200,184,154,0.2);border:1px solid #c8b89a;margin-bottom:32px}
-.feat{background:#f7f2e8;padding:22px 20px;display:flex;flex-direction:column;gap:6px}
-.feat-num{font-family:monospace;font-size:9px;letter-spacing:.2em;color:#c8b89a;margin-bottom:2px}
-.feat-title{font-family:'Noto Serif SC',serif;font-size:15px;color:#1a1008;letter-spacing:.05em}
-.feat-desc{font-size:12px;color:#6b5c4a;line-height:1.7}
-
-/* paywall */
-.paywall{background:#f7f2e8;border:1px solid #c8b89a;border-radius:4px;padding:28px 28px 24px;margin-bottom:28px}
-.paywall-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:20px}
-.paywall-badge{font-family:monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(184,134,11,0.12);color:#8b6914;border:1px solid rgba(184,134,11,0.25);padding:3px 10px;border-radius:2px;display:inline-block;margin-bottom:10px}
-.paywall-title{font-family:'Noto Serif SC',serif;font-size:22px;color:#1a1008;margin-bottom:6px;letter-spacing:.03em}
-.paywall-desc{font-size:13px;color:#6b5c4a;line-height:1.75}
-.paywall-right{flex-shrink:0;text-align:right}
-.price-big{font-family:monospace;font-size:36px;font-weight:600;color:#1a1008;line-height:1}
-.price-note{font-family:monospace;font-size:10px;color:#8a857d;margin-top:4px;margin-bottom:14px;text-align:right}
-.bundle-note{font-size:12px;color:#6b5c4a;background:rgba(46,107,79,0.06);border:1px solid rgba(46,107,79,0.15);padding:8px 12px;border-radius:2px;margin-bottom:16px;line-height:1.6}
-
-/* key input */
-.key-section{border-top:1px solid #e8dfc8;padding-top:20px}
-.key-label{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8a857d;margin-bottom:10px;display:block}
-.key-row{display:flex;gap:10px}
-.key-input{flex:1;font-family:monospace;font-size:13px;padding:10px 14px;border:1px solid #c8b89a;border-radius:2px;background:#fffef8;color:#1a1008;outline:none;letter-spacing:.05em;transition:border-color .2s}
-.key-input:focus{border-color:#b8860b}
-.key-input::placeholder{color:#c8b89a;letter-spacing:.1em}
-.key-btn{font-family:monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 20px;border:none;background:#1a1008;color:#f7f2e8;cursor:pointer;border-radius:2px;transition:opacity .2s;white-space:nowrap}
-.key-btn:hover{opacity:.8}
-.key-msg{margin-top:8px;font-family:monospace;font-size:11px;letter-spacing:.05em;display:none}
-.key-msg.error{color:#8b1a1a;display:block}
-.key-msg.ok{color:#2e6b4f;display:block}
-
-/* buy button */
-.buy-btn{display:block;width:100%;padding:14px;background:#2e6b4f;color:white;border:none;border-radius:2px;font-family:'Noto Serif SC',serif;font-size:16px;letter-spacing:3px;cursor:pointer;transition:all .2s;margin-bottom:10px;text-align:center;text-decoration:none}
-.buy-btn:hover{background:#4a9b72}
-.buy-sub{font-family:monospace;font-size:10px;color:#8a857d;text-align:center;letter-spacing:.1em}
-
-/* disclaimer */
-.disclaimer-sm{font-size:11px;color:#8a857d;line-height:1.7;border-top:1px solid #e8dfc8;padding-top:16px;margin-top:16px}
-
-/* ── TOOL (hidden until unlocked) ── */
-#toolSection{display:block}
-
-@media(max-width:640px){
-  .landing{padding:32px 20px 48px}
-  .rb-nav{padding:10px 20px}
-  .features{grid-template-columns:1fr}
-  .paywall-top{flex-direction:column;gap:16px}
-  .paywall-right{text-align:left}
-  .landing-title{font-size:28px}
-  .key-row{flex-direction:column}
-}
 </style>
 </head>
 <body>
 
-<!-- Rootbro nav -->
-<div class="rb-nav"><a href="https://tcmus.net">&larr; tcmus.net</a><span class="rb-nav-sep">·</span><a href="/tcm/">经典之方</a><span class="rb-nav-sep">·</span><a href="/fankui/">反馈</a></div>
+<!-- Rootbro Top Nav -->
+<div class="rb-nav">
+  <a href="https://tcmus.net">&larr; tcmus.net</a>
+  <span class="rb-nav-sep">·</span>
+  <a href="/tcm/">经典之方</a>
+  <span class="rb-nav-sep">·</span>
+  <a href="/fankui/">反馈</a>
+</div>
 
-<!-- ══ LANDING PAGE ══ -->
+<!-- ══ LANDING HEADER & FEATURES (已彻底移除视频框，排版与下半部完全统一) ══ -->
 <div id="landingSection">
-<div class="landing">
+  <div class="landing">
 
-  <div class="landing-label">Women's Classical Medicine</div>
-  <div class="landing-title">《傅青主女科》<br>智能辨证导航</div>
-  <div class="landing-sub">
-    清代名医傅山两百年经验，今日以算法重现。<br>
-    描述症状，系统按匹配度推荐最适合的经典方剂。
+    <div class="landing-header">
+      <div class="landing-label">Women's Classical Medicine</div>
+      <div class="landing-title">《傅青主女科》<br>智能辨证导航</div>
+      <div class="landing-sub">
+        清代名医傅山两百年经验，今日以算法重现。<br>
+        描述症状，系统按匹配度推荐最适合的经典方剂。
+      </div>
+    </div>
+
+    <!-- 统一卡片布局 (01 / 02 / 03)[cite: 2] -->
+    <div class="features">
+      <div class="feat">
+        <div class="feat-num">01</div>
+        <div class="feat-title">症状分级输入</div>
+        <div class="feat-desc">滑块与开关选择症状及严重程度，涵盖经、带、胎、产、全身六大类</div>
+      </div>
+      <div class="feat">
+        <div class="feat-num">02</div>
+        <div class="feat-title">算法匹配排序</div>
+        <div class="feat-desc">按匹配度评分排序，显示每首方剂的匹配症状与置信分数</div>
+      </div>
+      <div class="feat">
+        <div class="feat-num">03</div>
+        <div class="feat-title">完整方剂详情</div>
+        <div class="feat-desc">组成剂量、煎制方法、疗程建议、禁忌注意，附现代临床参考</div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      ⚕️ <strong>学习提示：</strong>本系统仅供学习参考，不构成医疗建议。中医辨证施治需结合望闻问切，建议在专业中医师指导下使用。
+    </div>
+
   </div>
-
-  <!-- Video -->
-  <div class="video-wrap" id="videoWrap">
-    <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo()">
-      <div class="video-play"><div class="play-tri"></div></div>
-      <div class="video-caption">产品演示 · 约 3 分钟</div>
-    </div>
-    <span class="video-tag">演示视频</span>
-  </div>
-
-  <!-- Features -->
-  <div class="features">
-    <div class="feat">
-      <div class="feat-num">01</div>
-      <div class="feat-title">症状分级输入</div>
-      <div class="feat-desc">滑块与开关选择症状及严重程度，涵盖经、带、胎、产、全身六大类</div>
-    </div>
-    <div class="feat">
-      <div class="feat-num">02</div>
-      <div class="feat-title">算法匹配排序</div>
-      <div class="feat-desc">按匹配度评分排序，显示每首方剂的匹配症状与置信分数</div>
-    </div>
-    <div class="feat">
-      <div class="feat-num">03</div>
-      <div class="feat-title">完整方剂详情</div>
-      <div class="feat-desc">组成剂量、煎制方法、疗程建议、禁忌注意，附现代临床参考</div>
-    </div>
-  </div>
-
-  <div class="disclaimer-sm">
-      ⚕️ 本系统仅供学习参考，不构成医疗建议。中医辨证施治需结合望闻问切，建议在专业中医师指导下使用。
-    </div>
-  </div>
-
 </div>
 
-<!-- ══ TOOL SECTION ══ -->
+<!-- ══ TOOL SECTION (方典主体，样式与上方统一)[cite: 2] ══ -->
 <div id="toolSection">
+  <div class="container">
+    <div class="tool-wrapper">
 
-<header>
-  <div class="header-seal">方典</div>
-  <div class="header-text">
-    <h1>经典中医方剂智能匹配</h1>
-    <p>傅青主女科 · 症状分级匹配 · 按相关度排序</p>
-  </div>
-</header>
+      <header class="tool-header">
+        <div class="header-seal">方典</div>
+        <div class="header-text">
+          <h1>经典中医方剂智能匹配</h1>
+          <p>傅青主女科 · 症状分级匹配 · 按相关度排序</p>
+        </div>
+      </header>
 
-<div class="container">
-  <div class="disclaimer">
-    ⚕️ <strong>重要提示：</strong>本系统仅供学习参考，不构成医疗建议。中医辨证施治需结合望闻问切，建议在专业中医师指导下使用，切勿自行配药服用。
-  </div>
+      <div class="tool-body">
+        <div class="disclaimer">
+          ⚕️ <strong>重要提示：</strong>本系统仅供学习参考，不构成医疗建议。中医辨证施治需结合望闻问切，建议在专业中医师指导下使用，切勿自行配药服用。
+        </div>
 
-  <div class="main-grid">
+        <div class="main-grid">
 
-    <!-- LEFT: Symptom Input -->
-    <div class="panel">
-      <div class="panel-header">
-        <div class="dot"></div>
-        <h2>症状录入</h2>
-      </div>
-      <div class="panel-body">
-        <div class="cat-tabs" id="catTabs"></div>
-        <div id="symptomGroups"></div>
-        <div class="btn-row">
-          <button class="btn-match" onclick="runMatch()">▶ 开始匹配</button>
-          <button class="btn-reset" onclick="resetAll()">重置</button>
+          <!-- LEFT: Symptom Input[cite: 2] -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="dot"></div>
+              <h2>症状录入</h2>
+            </div>
+            <div class="panel-body">
+              <div class="cat-tabs" id="catTabs"></div>
+              <div id="symptomGroups"></div>
+              <div class="btn-row">
+                <button class="btn-match" onclick="runMatch()">▶ 开始匹配</button>
+                <button class="btn-reset" onclick="resetAll()">重置</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Results[cite: 2] -->
+          <div class="panel results-area">
+            <div class="panel-header">
+              <div class="dot"></div>
+              <h2 id="resultsTitle">匹配结果</h2>
+            </div>
+            <div class="panel-body" id="resultsBody">
+              <div class="empty-state">
+                <div class="empty-icon">📜</div>
+                <p>请在左侧选择症状<br>系统将按<strong>匹配度排序</strong>推荐最适合的方剂<br><br>
+                <small style="color:var(--border)">支持症状分级 · 多症状权重叠加 · 实时排序</small></p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
 
-    <!-- RIGHT: Results -->
-    <div class="panel results-area">
-      <div class="panel-header">
-        <div class="dot"></div>
-        <h2 id="resultsTitle">匹配结果</h2>
-      </div>
-      <div class="panel-body" id="resultsBody">
-        <div class="empty-state">
-          <div class="empty-icon">📜</div>
-          <p>请在左侧选择症状<br>系统将按<strong>匹配度排序</strong>推荐最适合的方剂<br><br>
-          <small style="color:var(--border)">支持症状分级 · 多症状权重叠加 · 实时排序</small></p>
-        </div>
-      </div>
     </div>
-
   </div>
-</div>
-
-
-</div><!-- end toolSection -->
+</div><!-- end toolSection[cite: 2] -->
 
 <script>
 // ============================================================
-// KNOWLEDGE BASE (subset - 12 formulas from 傅青主女科)
+// KNOWLEDGE BASE (12 formulas from 傅青主女科)[cite: 2]
 // ============================================================
 const KB = {
   symptom_taxonomy: {
@@ -747,7 +825,7 @@ const KB = {
     }
   },
   formulas: [
-    // ── 不孕补全 ──────────────────────────────────────────────
+    // ── 不孕 ──
     {
       id:"FQZ-018", name:"并提汤",
       source:"傅青主女科·种子·胸满不思食不孕三十",
@@ -858,7 +936,7 @@ const KB = {
       notes:"小便涩+腹胀+脚肿+不孕四症并见才是此方适应症。与温胞饮区别：温胞饮主下腹冰冷，此方主水湿内停、膀胱气化失司。",
       modern:"适用于肾阳虚型不孕伴水肿，子宫内膜水肿，盆腔积液影响着床"
     },
-    // ── 产后调理 ──────────────────────────────────────────────
+    // ── 产后 ──
     {
       id:"FQZ-024", name:"通乳丹",
       source:"傅青主女科·产后·气血两虚乳汁不下七十六",
@@ -957,12 +1035,12 @@ const KB = {
 };
 
 // ============================================================
-// STATE
+// STATE[cite: 2]
 // ============================================================
 const state = {};
 
 // ============================================================
-// BUILD UI
+// BUILD UI[cite: 2]
 // ============================================================
 function buildUI() {
   const tabs = document.getElementById('catTabs');
@@ -1061,10 +1139,9 @@ function findSymConfig(key) {
 }
 
 // ============================================================
-// MATCHING ALGORITHM
+// MATCHING ALGORITHM[cite: 2]
 // ============================================================
 function runMatch() {
-  // Check if any symptom is selected
   const anySet = Object.values(state).some(v => v > 0);
   if(!anySet) {
     document.getElementById('resultsBody').innerHTML = `
@@ -1093,7 +1170,6 @@ function runMatch() {
       maxPossible += w * max;
 
       if(userVal > 0 && fVal > 0) {
-        // Similarity: penalize mismatch
         const similarity = 1 - Math.abs(userVal - fVal) / max;
         const contribution = w * Math.min(userVal, fVal) * similarity;
         score += contribution;
@@ -1105,7 +1181,6 @@ function runMatch() {
       }
     });
 
-    // Normalize to 0-100
     const normalizedScore = maxPossible > 0 ? Math.round((score / maxPossible) * 100) : 0;
     if(normalizedScore > 0) {
       results.push({ formula, score: normalizedScore, matchedSyms, strongMatches });
@@ -1113,7 +1188,6 @@ function runMatch() {
   });
 
   results.sort((a,b) => b.score - a.score);
-
   renderResults(results);
 }
 
@@ -1191,7 +1265,6 @@ function renderResults(results) {
     </div>`;
   }).join('');
 
-  // Auto-open top result
   setTimeout(() => toggleCard(1), 100);
 }
 
@@ -1202,16 +1275,13 @@ function toggleCard(rank) {
 
 function resetAll() {
   Object.keys(state).forEach(k => state[k] = 0);
-  // Reset sliders
   document.querySelectorAll('input[type=range]').forEach(el => {
     el.value = 0;
     el.style.setProperty('--pct','0%');
   });
-  // Reset val labels
   document.querySelectorAll('[id^="val_"]').forEach(el => {
     el.textContent = '无'; el.className = 'symptom-val zero';
   });
-  // Reset toggles
   document.querySelectorAll('.toggle-wrap').forEach(wrap => {
     wrap.querySelectorAll('.toggle-btn')[0].className = 'toggle-btn selected-no';
     wrap.querySelectorAll('.toggle-btn')[1].className = 'toggle-btn';
@@ -1226,16 +1296,6 @@ function resetAll() {
 
 // Init
 buildUI();
-</script>
-
-<script>
-// ── VIDEO ──
-function loadVideo() {
-  const wrap = document.getElementById('videoWrap');
-  // Replace YOUR_VIDEO_ID with actual YouTube video ID
-  const videoId = 'YOUR_VIDEO_ID';
-  wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-}
 </script>
 </body>
 </html>
