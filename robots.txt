@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+Sitemap: https://tcmus.net/sitemap.xml
