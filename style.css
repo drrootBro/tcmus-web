@@ -96,3 +96,5 @@ main img{max-width:100%;height:auto}
 .brand .us{color:var(--gold)}
 .brand a .us{margin-left:-.09em}
 footer .us{color:inherit}
+
+.brand a .logo-img{height:34px;width:auto;display:block}

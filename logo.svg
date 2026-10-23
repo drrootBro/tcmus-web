@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 48" role="img" aria-label="TCMus.net 北美华人中医信息网">
+  <title>TCMus.net 北美华人中医信息网</title>
+  <rect x="9" y="17" width="15" height="15" transform="rotate(45 16.5 24.5)" fill="#8b3a2a"/>
+  <text x="42" y="34" font-family="Georgia,'Times New Roman',serif" font-size="31" font-weight="700" fill="#1a1612">TCM<tspan fill="#8b3a2a" dx="-3">US</tspan><tspan dx="-2">.NET</tspan></text>
+  <text x="238" y="33" font-family="-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="19" font-weight="600" fill="#4a453f" letter-spacing="1">北美华人中医信息网</text>
+</svg>
