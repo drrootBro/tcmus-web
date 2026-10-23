@@ -1,6 +1,6 @@
-# TCMUS.net — 北美华人中医教育站
+# TCMUS.net — 北美华人中医信息网
 
-> 北美华人中医教育站（中文为主）：穴位自查工具、找中医避坑指南、诊所与药材严选。教育先行——先教会你分辨，再谈找谁看。
+> 北美华人中医信息网（中文为主）：穴位自查工具、找中医避坑指南、诊所与药材严选。教育先行——先教会你分辨，再谈找谁看。
 > 内容口径：不诊断、不开方、不承诺治愈。每页常驻"何时必须去看医生/去急诊"清单。
 
 TCMUS.net 帮北美华人解决两个问题：看中医怕被坑（找谁），买药材怕买错（买哪家）。
@@ -30,43 +30,7 @@ TCMUS.net 帮北美华人解决两个问题：看中医怕被坑（找谁），�
 
 - [关于我们](https://tcmus.net/about)：我们是谁、核验方法论（执照查询 + 实地探店标准公开）、"何时必须去看医生/去急诊"清单。
 
-## 中医经典之方 · 神农本草经精要（32 味全）
+## 首批文章（URL 待建站时补入）
 
-- [神农本草经精要 · 索引](https://tcmus.net/tcm/bencao/)：32 味核心本草，支持按功效分类筛选与搜索；每味含原文、性味归经、系统生物学解读、经典配伍。
-- [伤寒论免费工具](https://tcmus.net/tcm/shanghan/free.html)：辨证选方交互工具（免费版）。
-- [傅青主女科](https://tcmus.net/tcm/fuqingzhu/)：女科辨证交互工具。
-- [经方博客](https://tcmus.net/tcm/blog/)：桂枝汤自汗案、小柴胡案、六经状态等实案文章。
-
-32 味本草单页：
-- [白术 Baizhu](https://tcmus.net/tcm/bencao/baizhu.html)：Rhizoma Atractylodis Macrocephalae
-- [半夏 Banxia](https://tcmus.net/tcm/bencao/banxia.html)：Rhizoma Pinelliae Preparatum
-- [柴胡 Chaihu](https://tcmus.net/tcm/bencao/chaihu.html)：Radix Bupleuri
-- [川芎 Chuanxiong](https://tcmus.net/tcm/bencao/chuanxiong.html)：Rhizoma Ligustici Chuanxiong
-- [大黄 Dahuang](https://tcmus.net/tcm/bencao/dahuang.html)：Radix et Rhizoma Rhei
-- [当归 Danggui](https://tcmus.net/tcm/bencao/danggui.html)：Radix Angelicae Sinensis
-- [大枣 Dazao](https://tcmus.net/tcm/bencao/dazao.html)：Fructus Ziziphae Jujubae
-- [阿胶 Ejiao](https://tcmus.net/tcm/bencao/ejiao.html)：Colla Corii Asini
-- [茯苓 Fuling](https://tcmus.net/tcm/bencao/fuling.html)：Poria Cocos (Schw.) Wolf
-- [附子 Fuzi](https://tcmus.net/tcm/bencao/fuzi.html)：Radix Aconiti Lateralis Preparata
-- [甘草 Gancao](https://tcmus.net/tcm/bencao/gancao.html)：Radix et Rhizoma Glycyrrhizae
-- [葛根 Gegen](https://tcmus.net/tcm/bencao/gegen.html)：Radix Puerariae Lobatae
-- [桂枝 Guizhi](https://tcmus.net/tcm/bencao/guizhi.html)：Ramulus Cinnamomi Cassiae
-- [厚朴 Houpo](https://tcmus.net/tcm/bencao/houpo.html)：Cortex Magnoliae Officinalis
-- [黄连 Huanglian](https://tcmus.net/tcm/bencao/huanglian.html)：Rhizoma Coptidis
-- [黄芪 Huangqi](https://tcmus.net/tcm/bencao/huangqi.html)：Radix Astragali Membranacei
-- [黄芩 Huangqin](https://tcmus.net/tcm/bencao/huangqin.html)：Radix Scutellariae Baicalensis
-- [麻黄 Mahuang](https://tcmus.net/tcm/bencao/mahuang.html)：Herba Ephedrae Sinicae
-- [芒硝 Mangxiao](https://tcmus.net/tcm/bencao/mangxiao.html)：Natrii Sulfas Exsiccatus
-- [人参 Renshen](https://tcmus.net/tcm/bencao/renshen.html)：Radix et Rhizoma Ginseng
-- [芍药 Shaoyao](https://tcmus.net/tcm/bencao/shaoyao.html)：Radix Paeoniae Alba
-- [生姜 Shengjiang](https://tcmus.net/tcm/bencao/shengjiang.html)：Rhizoma Zingiberis Recens
-- [石膏 Shigao](https://tcmus.net/tcm/bencao/shigao.html)：Gypsum Fibrosum
-- [五味子 Wuweizi](https://tcmus.net/tcm/bencao/wuweizi.html)：Fructus Schisandrae Chinensis
-- [杏仁 Xingren](https://tcmus.net/tcm/bencao/xingren.html)：Semen Armeniacae Amarum
-- [细辛 Xixin](https://tcmus.net/tcm/bencao/xixin.html)：Radix et Rhizoma Asari
-- [泽泻 Zexie](https://tcmus.net/tcm/bencao/zexie.html)：Rhizoma Alismatis Orientalis
-- [炙甘草 Zhigancao](https://tcmus.net/tcm/bencao/zhigancao.html)：Radix Glycyrrhizae Preparata cum Melle
-- [知母 Zhimu](https://tcmus.net/tcm/bencao/zhimu.html)：Rhizoma Anemarrhenae Asphodeloidis
-- [枳实 Zhishi](https://tcmus.net/tcm/bencao/zhishi.html)：Fructus Aurantii Immaturus
-- [栀子 Zhizi](https://tcmus.net/tcm/bencao/zhizi.html)：Fructus Gardeniae Jasminoidis
-- [猪苓 Zhuling](https://tcmus.net/tcm/bencao/zhuling.html)：Polyporus umbellatus (Pers.) Fries
+设计稿第三章 10 篇：监管科普 2 篇（为什么美国中医比中国乱 / 美国没有"中医师"这个执照）、避坑 3 篇（找中医避坑指南 / 中药材在哪买靠谱 / 针灸一次多少钱）、穴位 3 篇（头疼按合谷 LI4 / 胃不舒服找足三里 ST36 / 失眠按涌泉 KI1）、信任背书 2 篇（我们是怎么核验一家针灸店的 / 经方派是什么）。
+URL 确定后逐条回填到本文件对应章节再部署。
