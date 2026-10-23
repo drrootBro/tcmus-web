@@ -18,7 +18,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 header.site{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.97);border-bottom:1px solid var(--border-warm);box-shadow:0 1px 0 var(--gold-light)}
 header.site .wrap{padding-top:12px}
 .brand{font-size:22px;padding:6px 0 8px}
-.brand a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px;border-bottom:none}
+.brand a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px;border-bottom:none;text-transform:uppercase;letter-spacing:.02em}
 .brand a::before{content:'';width:11px;height:11px;background:var(--brush);transform:rotate(45deg);flex:none}
 .brand small{font-family:var(--sans);font-weight:600;color:var(--ink-soft);font-size:15px;letter-spacing:.06em;margin-left:12px}
 nav{display:flex;gap:2px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
