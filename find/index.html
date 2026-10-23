@@ -139,7 +139,7 @@ runQuery(`${city?(AREA[city]||city):(STATES[st]||st)}针灸师（精选在前）
 async function profile(lic){const p=await api("/api/doctor?lic="+lic);if(p.error){alert("档案不存在");return}
 let cats=p.cats?`<h3 class="serif" style="color:var(--red)">自述专长</h3><div>${p.cats.map(c=>`<span class="tag">${c}</span>`).join("")}</div><p class="meta">${p.claim||""}</p><p class="self">来源：${p.source||""} · 商家自述，未经本站核验；本站不背书疗效。</p>`:`<h3 class="serif" style="color:var(--red)">自述专长</h3><p class="meta">该医师尚未留下自述专长。认领本页后可补填，补填后即可被按症状搜到。</p>`;
 let bio=p.bio?`<h3 class="serif" style="color:var(--red)">自我介绍</h3><p class="meta">${p.bio}</p><p class="self">医师本人提供，经本站核对后发布。</p>`:"";
-let claimBox=p.claimed?"":`<div class="note" style="margin-top:14px">这是您本人的档案？<a href="/find/#claim">认领它</a>——补上自述专长、100–200 字自我介绍和诊所官网链接，还能进入按症状搜索。</div>`;
+let claimBox=p.claimed?"":`<div class="note" style="margin-top:14px">这是您本人的档案？<a href="mailto:rootbrodapp@gmail.com?subject=认领档案申请（执照号 ${p.lic}）&body=姓名：%0A执照号：${p.lic}%0A诊所名称：%0A联系电话：%0A要补充/修正的内容：">点此发邮件认领</a>——补上自述专长、100–200 字自我介绍和诊所官网链接，还能进入按症状搜索。</div>`;
 $("p-body").innerHTML=`<div class="card" style="cursor:default"><h3 style="font-size:24px">${p.name}<span class="badge">执照已核验</span>${p.claimed?'<span class="badge" style="background:var(--gold)">已认领</span>':""}</h3>
 <div class="meta">${AREA[p.area]||p.area} · ${p.addr||"地址待认领确认"} ${p.zip||""}<br>电话 ${p.phone||"—"}${p.rating?"<br>"+p.rating+"（参考）":""}${p.website?`<br>诊所官网：<a href="${p.website}" target="_blank" rel="noopener">${p.website}</a>`:""}</div>
 <h3 class="serif" style="color:var(--red)">本站核验（站长分 · 只记硬事实）</h3>
@@ -161,5 +161,6 @@ if(coverage.length){$("q-state").value=coverage[0].code;fillCities();
 $("coverage").textContent="已开通："+coverage.map(s=>s.label+"（"+s.areas.map(a=>a.label).join(" · ")+"）").join("；")}
 const sel=$("q-sym"),sel2=$("q-sym2");SYMPTOMS.forEach(s=>{[sel,sel2].forEach(el=>{const o=document.createElement("option");o.value=s;o.textContent=s;el.appendChild(o)})});
 $("chips").innerHTML=SYMPTOMS.slice(0,10).map(s=>`<span class="chip" onclick="$('q-sym2').value='${s}';doSymptom(1)">${s}</span>`).join("");
-const f=await api("/api/search?mode=featured");$("featured").innerHTML=(f.results||[]).map(card).join("")})();
+const f=await api("/api/search?mode=featured");$("featured").innerHTML=(f.results||[]).map(card).join("");
+const lic0=new URLSearchParams(location.search).get("lic");if(lic0&&/^\d{6}$/.test(lic0))profile(lic0)})();
 </script></body></html>
