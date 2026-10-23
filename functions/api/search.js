@@ -20,7 +20,7 @@ const shape = r => ({
   lic: r.license_no, name: r.name, area: r.area, addr: r.address || "", zip: r.zip || "",
   phone: r.phone || "", since: r.licensed_date || "", exp: r.reg_expiry || "",
   rating: r.rating || "", cats: r.categories ? r.categories.split(";") : null,
-  website: r.website || "", claimed: r.claimed ? 1 : 0,
+  website: r.public ? (r.website || "") : "", claimed: r.claimed ? 1 : 0,
 });
 const json = (obj, status = 200) => new Response(JSON.stringify(obj), { status, headers: { "content-type": "application/json; charset=utf-8" } });
 

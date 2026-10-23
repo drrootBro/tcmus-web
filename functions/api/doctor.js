@@ -11,6 +11,6 @@ export async function onRequestGet({ request, env }) {
     lic: r.license_no, name: r.name, state: r.state, area: r.area, addr: r.address || "", zip: r.zip || "",
     phone: r.phone || "", since: r.licensed_date || "", exp: r.reg_expiry || "", rating: r.rating || "",
     cats: r.categories ? r.categories.split(";") : null, claim: r.claim_summary || "", source: r.source || "",
-    website: r.website || "", bio: r.bio || "", claimed: r.claimed ? 1 : 0,
+    website: r.public ? (r.website || "") : "", bio: r.public ? (r.bio || "") : "", claimed: r.claimed ? 1 : 0,
   });
 }
