@@ -125,9 +125,26 @@
   @media(max-width:800px){.layout{grid-template-columns:1fr;}.result-panel{position:static;}.container{padding:12px;}header{padding:14px 16px;}}
 .tcmus-nav{max-width:1200px;margin:0 auto;padding:10px 16px 0;font-family:'Georgia','Songti SC','STSong','SimSun',serif;font-size:15px;letter-spacing:normal;color:#8a857d;display:flex;flex-wrap:wrap;gap:10px;align-items:center}.tcmus-nav a{color:#4a453f;text-decoration:none}.tcmus-nav a:hover{color:#8b3a2a}
 </style>
+<style>
+.tcmus-hdr{position:sticky;top:0;z-index:60;background:rgba(250,248,244,.97);border-bottom:1px solid rgba(139,58,42,.16);box-shadow:0 1px 0 rgba(184,148,42,.12);font-family:'Georgia','Songti SC','STSong','SimSun',serif}
+.tcmus-hdr-in{max-width:1200px;margin:0 auto;padding:12px 16px 0 16px}
+.tcmus-hdr-brand{padding:6px 0 8px}
+.tcmus-hdr-brand a{display:inline-flex;align-items:center;text-decoration:none;border-bottom:none}
+.tcmus-hdr-brand img{height:34px;width:auto;display:block}
+.tcmus-hdr nav{display:flex;gap:2px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tcmus-hdr nav::-webkit-scrollbar{display:none}
+.tcmus-hdr nav a{white-space:nowrap;padding:8px 12px;font-size:15px;color:#4a453f;text-decoration:none;position:relative;border-bottom:none}
+.tcmus-hdr nav a:hover{color:#8b3a2a}
+.tcmus-hdr nav a.on{color:#8b3a2a}
+.tcmus-hdr nav a.on::after{content:'';position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:#8b3a2a}
+@media(max-width:660px){.tcmus-hdr-in{padding:10px 20px 0}.tcmus-hdr nav a{padding:8px 10px;font-size:14px}}
+</style>
 </head>
 <body>
-<div class="tcmus-nav"><a href="/">&larr; tcmus.net</a><span>·</span><a href="/tcm/">经典之方</a><span>·</span><a href="/xuewei/">穴位自查</a><span>·</span><a href="/find/">黄页</a><span>·</span><a href="/fankui/">反馈</a></div>
+<header class="tcmus-hdr"><div class="tcmus-hdr-in">
+<div class="tcmus-hdr-brand"><a href="/"><img src="/logo.svg" alt="TCMus.net 北美华人中医信息网"></a></div>
+<nav><a href="/">首页</a><a href="/xuewei/">穴位自查</a><a href="/xue/01.html">中医入门</a><a href="/tcm/" class="on">经典之方</a><a href="/bikeng/03.html">避坑指南</a><a href="/yanxuan/">严选</a><a href="/find/">黄页</a><a href="/about/">关于</a><a href="/fankui/">反馈</a></nav>
+</div></header>
 
 <header>
   <a href="https://tcmus.net" style="display:flex;align-items:center;flex-shrink:0;">
