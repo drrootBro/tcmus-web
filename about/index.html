@@ -7,100 +7,51 @@
 <meta name="description" content="三步——查执照（州政府公开可查）、问医师（免费挂牌换执照号）、听患者（问诊三问 + 四项评价）。方法论全公开，欢迎来挑刺。">
 <link rel="canonical" href="https://tcmus.net/about/">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#1a1612;--ink-soft:#4a453f;--ink-muted:#8a857d;
-  --paper:#faf8f4;--paper-warm:#f0ebe0;--paper-card:#fffdf9;
-  --brush:#8b3a2a;--brush-deep:#6e2c20;--brush-light:rgba(139,58,42,.08);
-  --gold:#b8942a;--gold-light:rgba(184,148,42,.12);
-  --teal:#2a6b5e;--teal-light:rgba(42,107,94,.08);
-  --border:rgba(26,22,18,.10);--border-warm:rgba(139,58,42,.16);
-  --serif:'Georgia','Songti SC','STSong','SimSun',serif;
-  --sans:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
-}
-html{-webkit-text-size-adjust:100%}
-body{font-family:var(--serif);background:var(--paper);color:var(--ink);line-height:1.9;font-size:17px;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 10% 20%,rgba(139,58,42,.03) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 90% 80%,rgba(42,107,94,.03) 0%,transparent 60%);pointer-events:none;z-index:0}
-::selection{background:var(--brush-light)}
-.page-rule{position:fixed;left:48px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border-warm) 20%,var(--border-warm) 80%,transparent);z-index:0;pointer-events:none}
-.wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 40px}
-header.site{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.97);border-bottom:1px solid var(--border-warm);box-shadow:0 1px 0 var(--gold-light)}
-header.site .wrap{padding-top:12px}
-.brand{font-size:22px;padding:6px 0 8px}
-.brand a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px;border-bottom:none}
-.brand a::before{content:'';width:11px;height:11px;background:var(--brush);transform:rotate(45deg);flex:none}
-.brand small{font-family:var(--sans);font-weight:400;color:var(--ink-muted);font-size:12px;letter-spacing:.08em;margin-left:2px}
-nav{display:flex;gap:2px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-nav::-webkit-scrollbar{display:none}
-nav a{white-space:nowrap;padding:8px 12px;font-size:15px;color:var(--ink-soft);text-decoration:none;position:relative;border-bottom:none}
-nav a::after{content:'';position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:var(--brush);transform:scaleX(0);transform-origin:left;transition:transform .25s}
-nav a:hover{color:var(--brush)}
-nav a.on{color:var(--brush)}
-nav a.on::after{transform:scaleX(1)}
-main{padding:40px 0 56px;position:relative;z-index:1}
-main h1{font-size:clamp(26px,4vw,36px);line-height:1.45;font-weight:400;margin-bottom:18px;position:relative;padding-bottom:16px}
-main h1::after{content:'';position:absolute;left:0;bottom:0;width:56px;height:3px;background:var(--brush)}
-h2{font-size:22px;font-weight:400;margin:36px 0 14px;display:flex;align-items:center;gap:12px}
-h2::before{content:'';width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex:none}
-h3{font-size:19px;font-weight:400;margin:20px 0 8px}
-p{margin:12px 0}
-ul,ol{margin:12px 0 12px 24px}
-li{margin:8px 0}
-a{color:var(--brush);text-decoration:none}
-a:hover{color:var(--brush-deep)}
-.hero{position:relative;overflow:hidden;background:var(--paper-card);border:1px solid var(--border-warm);border-top:4px solid var(--brush);padding:clamp(48px,7vw,84px) clamp(24px,5vw,60px);margin:8px 0 44px;animation:fadeUp .6s ease both}
-.hero::before{content:'\533b';position:absolute;right:-24px;top:50%;transform:translateY(-52%);font-size:clamp(180px,26vw,300px);line-height:1;color:rgba(139,58,42,.055);font-family:var(--serif);pointer-events:none}
-.hero h1{font-size:clamp(30px,5.2vw,52px);line-height:1.4;margin-bottom:20px;padding-bottom:0;max-width:19em;position:relative;z-index:1;animation:none}
-.hero h1::after{display:none}
-.hero p{position:relative;z-index:1;font-size:18px;color:var(--ink-soft);max-width:34em}
-.hero .seal{position:absolute;right:28px;bottom:24px;z-index:1;width:64px;height:64px;background:var(--brush);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:30px;font-family:var(--serif);transform:rotate(-4deg);box-shadow:0 4px 14px rgba(139,58,42,.35);border-radius:2px}
-.btn{display:inline-block;background:var(--brush);color:var(--paper)!important;padding:12px 28px;text-decoration:none;margin:10px 10px 10px 0;font-size:16px;letter-spacing:.05em;border:1px solid var(--brush);transition:background .2s;position:relative;z-index:1}
-.btn:hover{background:var(--brush-deep);color:var(--paper)!important}
-.btn.ghost{background:transparent;color:var(--brush)!important;border:1px solid var(--brush)}
-.btn.ghost:hover{background:var(--brush-light);color:var(--brush-deep)!important}
-.card{background:var(--paper-card);border:1px solid var(--border);padding:22px 24px;margin:16px 0;position:relative;transition:border-color .2s}
-.card::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--brush);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.card:hover{border-color:var(--border-warm)}
-.card:hover::after{transform:scaleX(1)}
-.card h3{margin:0 0 8px;font-size:19px}
-.card h3 a{color:var(--ink)}
-.card h3 a:hover{color:var(--brush)}
-.card p{margin:6px 0;color:var(--ink-soft);font-size:16px}
-.lede{background:var(--paper-warm);border-left:4px solid var(--brush);padding:14px 18px;margin:18px 0;font-size:16.5px;color:var(--ink)}
-.warn{background:var(--gold-light);border:1px solid rgba(184,148,42,.4);padding:14px 18px;margin:18px 0;font-size:15.5px;color:var(--ink)}
-table{width:100%;border-collapse:collapse;font-size:15.5px;margin:16px 0}
-th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
-th{background:var(--paper-warm);font-weight:400;white-space:nowrap}
-details{border:1px solid var(--border);margin:12px 0;padding:12px 16px;background:var(--paper-card)}
-summary{cursor:pointer;color:var(--ink)}
-.badge{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:.08em;color:var(--brush);border:1px solid var(--brush);background:var(--brush-light);padding:2px 8px;margin-left:8px;vertical-align:middle;border-radius:1px}
-.badge.gray{color:var(--ink-muted);border-color:var(--border);background:transparent}
-.tag{font-size:13.5px;color:var(--ink-muted);font-family:var(--sans)}
-hr{border:none;border-top:1px solid var(--border);margin:24px 0}
-footer.site{border-top:1px solid var(--border-warm);background:var(--paper-warm);padding:28px 0 44px;font-size:14px;color:var(--ink-soft);position:relative;z-index:1}
-footer.site::before{content:'';display:block;height:2px;background:linear-gradient(to right,var(--gold),transparent);margin-bottom:20px}
-footer.site p{margin:8px 0;font-family:var(--sans)}
-footer.site strong{color:var(--brush);font-weight:600}
-.form-wrap{margin:22px 0}
-.form-wrap iframe{width:100%;min-height:920px;border:1px solid var(--border);background:var(--paper-card)}
-main img{max-width:100%;height:auto}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@media(max-width:660px){
-  .page-rule{display:none}
-  .wrap{padding:0 20px}
-  header.site .wrap{padding-top:10px}
-  main{padding:28px 0 40px}
-  .hero .seal{width:48px;height:48px;font-size:22px;right:16px;bottom:16px}
-  nav a{padding:8px 10px;font-size:14px}
-  .brand{font-size:19px}
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.8;color:#222;background:#fff;font-size:17px}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+header.site{border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10}
+.brand{font-weight:800;font-size:20px;padding:14px 0 6px}
+.brand a{color:#1a1a1a;text-decoration:none}
+.brand small{font-weight:400;color:#888;font-size:13px;margin-left:8px}
+nav{display:flex;gap:2px;overflow-x:auto;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+nav a{white-space:nowrap;padding:6px 10px;font-size:15px;color:#444;text-decoration:none;border-radius:6px}
+nav a:hover,nav a.on{background:#f4f4f4;color:#111}
+main{padding:28px 0 40px}
+h1{font-size:26px;line-height:1.4;margin-bottom:14px}
+h2{font-size:20px;margin:28px 0 10px;padding-top:8px;border-top:1px solid #f0f0f0}
+h2:first-of-type{border-top:none}
+p{margin:10px 0}
+ul,ol{margin:10px 0 10px 22px}
+li{margin:6px 0}
+.lede{background:#f8f8f6;border-left:4px solid #c33;padding:12px 16px;margin:16px 0;font-size:16px}
+.warn{background:#fff8e6;border:1px solid #f0d98c;border-radius:8px;padding:12px 16px;margin:16px 0;font-size:15px}
+details{border:1px solid #eee;border-radius:8px;margin:10px 0;padding:10px 14px}
+summary{cursor:pointer;font-weight:600}
+.card{border:1px solid #eee;border-radius:10px;padding:16px;margin:14px 0}
+.card h3{font-size:18px;margin-bottom:6px}
+.card h3 a{color:#111;text-decoration:none}
+.btn{display:inline-block;background:#111;color:#fff;padding:10px 22px;border-radius:8px;text-decoration:none;margin:8px 8px 8px 0;font-size:16px}
+.btn.ghost{background:#f4f4f4;color:#111}
+.hero{background:#fafafa;border-radius:12px;padding:28px 22px;margin-bottom:24px}
+.hero h1{font-size:28px}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:14px 0}
+th,td{border:1px solid #eee;padding:8px;text-align:left;vertical-align:top}
+th{background:#fafafa}
+footer.site{border-top:1px solid #eee;background:#fafafa;padding:24px 0 40px;font-size:14px;color:#666}
+footer.site p{margin:6px 0}
+.badge{display:inline-block;font-size:12px;background:#e8f5e9;color:#2e7d32;border-radius:4px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.badge.gray{background:#f0f0f0;color:#888}
+.tag{font-size:13px;color:#888}
+hr{border:none;border-top:1px solid #eee;margin:20px 0}
+a{color:#0b5fff}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "关于我们：核验方法论", "description": "三步——查执照（州政府公开可查）、问医师（免费挂牌换执照号）、听患者（问诊三问 + 四项评价）。方法论全公开，欢迎来挑刺。", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "tcmus.net"}, "mainEntityOfPage": "https://tcmus.net/about/"}</script>
 </head>
-<body><div class="page-rule" aria-hidden="true"></div>
+<body>
 <header class="site"><div class="wrap">
 <div class="brand"><a href="/">tcmus.net</a><small>北美华人中医教育站</small></div>
-<nav><a href="/">首页</a><a href="/xuewei/">穴位自查</a><a href="/xue/01.html">中医入门</a><a href="/tcm/">经典之方</a><a href="/bikeng/03.html">避坑指南</a><a href="/yanxuan/">严选</a><a href="/huangye/">黄页</a><a href="/about/" class="on">关于</a><a href="/fankui/">反馈</a></nav>
+<nav><a href="/" class="">首页</a><a href="/xuewei/" class="">穴位自查</a><a href="/xue/01.html" class="">中医入门</a><a href="/bikeng/03.html" class="">避坑指南</a><a href="/yanxuan/" class="">严选</a><a href="/find/" class="">黄页</a><a href="/about/" class="on">关于</a></nav>
 </div></header>
 <main><div class="wrap">
 <h1>关于我们：核验方法论</h1>
