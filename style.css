@@ -92,3 +92,5 @@ main img{max-width:100%;height:auto}
 .grid2 .card{margin:8px 0}
 @media(max-width:660px){.grid2{grid-template-columns:1fr}.stats{gap:22px}}
 
+
+.brand .us,footer .us{color:var(--brush)}
