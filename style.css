@@ -20,7 +20,7 @@ header.site .wrap{padding-top:12px}
 .brand{font-size:22px;padding:6px 0 8px}
 .brand a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px;border-bottom:none}
 .brand a::before{content:'';width:11px;height:11px;background:var(--brush);transform:rotate(45deg);flex:none}
-.brand small{font-family:var(--sans);font-weight:400;color:var(--ink-muted);font-size:12px;letter-spacing:.08em;margin-left:2px}
+.brand small{display:block;font-family:var(--sans);font-weight:400;color:var(--ink-muted);font-size:12px;letter-spacing:.08em;margin-left:2px;margin-top:1px}
 nav{display:flex;gap:2px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
 nav a{white-space:nowrap;padding:8px 12px;font-size:15px;color:var(--ink-soft);text-decoration:none;position:relative;border-bottom:none}
@@ -93,4 +93,4 @@ main img{max-width:100%;height:auto}
 @media(max-width:660px){.grid2{grid-template-columns:1fr}.stats{gap:22px}}
 
 
-.brand .us,footer .us{color:var(--brush)}
+.brand .us,footer .us{color:inherit}
