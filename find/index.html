@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找针灸师 · 北美中医信息站</title>
+<meta name="description" content="按距离、按症状查找经州官方机构逐人核验执照的针灸师：无处分记录才入选。">
+<style>
+:root{--bg:#faf8f4;--ink:#1a1612;--red:#8b3a2a;--gold:#b8942a;--teal:#2a6b5e;--line:#e3dac6;--card:#fffdf8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+h1,h2,h3,.serif{font-family:Georgia,"Songti SC","SimSun",serif}
+header{background:var(--card);border-bottom:2px solid var(--red);padding:14px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{font-size:22px;color:var(--red);font-weight:bold;letter-spacing:2px}
+nav a{color:var(--ink);text-decoration:none;margin-right:16px;font-size:15px}
+nav a.on{color:var(--red);font-weight:bold}
+main{max-width:960px;margin:0 auto;padding:24px 16px 60px}
+.hero{text-align:center;padding:28px 0 8px}
+.hero h1{font-size:30px;margin:0 0 8px}
+.hero p{color:#5c5546;margin:4px 0}
+.searchbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:20px 0;box-shadow:0 2px 10px rgba(26,22,18,.05)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+select,input[type=text]{flex:1;min-width:150px;padding:11px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:#fff}
+button{background:var(--red);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:15px;cursor:pointer}
+button.ghost{background:#fff;color:var(--red);border:1px solid var(--red)}
+.chips{margin-top:12px}
+.chip{display:inline-block;border:1px solid var(--gold);color:#7a6414;background:#fdf6e0;border-radius:14px;padding:4px 12px;margin:3px;font-size:13px;cursor:pointer}
+.chip:hover{background:var(--gold);color:#fff}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:10px 0;cursor:pointer}
+.card:hover{border-color:var(--gold)}
+.card h3{margin:0 0 4px;font-size:19px}
+.meta{color:#5c5546;font-size:14px;line-height:1.7}
+.badge{display:inline-block;background:var(--teal);color:#fff;border-radius:9px;padding:1px 9px;font-size:12px;margin-left:8px;vertical-align:2px}
+.tag{display:inline-block;background:#eef4f1;color:var(--teal);border-radius:8px;padding:1px 8px;font-size:12px;margin:2px 2px 0 0}
+.self{font-size:12px;color:#8a8171}
+.pager{text-align:center;margin:18px 0}
+.pager button{margin:0 4px;padding:7px 14px}
+.pager button[disabled]{opacity:.4;cursor:default}
+.check li{margin:7px 0;list-style:none}
+.check{padding-left:4px}
+.ok{color:var(--teal);font-weight:bold}
+.back{color:var(--red);cursor:pointer;font-size:14px}
+.note{background:#fdf6e0;border:1px solid var(--gold);border-radius:10px;padding:12px 16px;font-size:13px;color:#6b5c1e;margin:16px 0;line-height:1.7}
+.hidden{display:none}
+footer{color:#8a8171;font-size:12px;text-align:center;padding:20px;line-height:1.8}
+.count{color:#5c5546;font-size:14px;margin:10px 0}
+.blk{font-weight:bold;color:var(--red)}
+</style></head><body>
+<header><div class="logo">北美中医信息站</div>
+<nav><a href="/">首页</a><a href="/find/" class="on">找针灸师</a><a href="/tcm/">经典之方</a></nav></header>
+<main>
+<section id="v-home">
+<div class="hero"><h1>找一位靠谱的针灸师</h1>
+<p>医师执照由所在州官方机构逐人核验 · 无处分记录才入选</p>
+<p class="self">输入你的 ZIP，按距离找附近的针灸师；也可以叠加症状——按症状找，是大多数人的找法。</p></div>
+<div class="searchbox">
+<div class="meta blk">① 找附近（输 ZIP，按距离出）</div>
+<div class="row" style="margin-top:6px">
+<input type="text" id="q-zip" placeholder="输入你的 ZIP Code（如 11354）" maxlength="5" inputmode="numeric">
+<select id="q-radius" style="flex:0 0 130px"><option value="10">10 英里内</option><option value="25">25 英里内</option><option value="50">50 英里内</option><option value="100" selected>100 英里内</option></select>
+<select id="q-sym"><option value="">症状（可选）…</option></select>
+<button onclick="doZip(1)">找附近</button>
+</div>
+<div class="meta blk" style="margin-top:16px">② 按症状找（先选地区，再选症状）</div>
+<div class="row" style="margin-top:6px">
+<select id="q-state" onchange="fillCities()"><option value="">选择州…</option></select>
+<select id="q-city"><option value="">全部城市</option></select>
+<select id="q-sym2"><option value="">选择困扰你的症状…</option></select>
+<button class="ghost" onclick="doSymptom(1)">按症状找</button>
+</div>
+<div class="chips" id="chips"></div>
+<div class="meta blk" style="margin-top:16px">③ 知道名字 / 逛地区</div>
+<div class="row" style="margin-top:6px">
+<input type="text" id="q-name" placeholder="知道名字？在这里搜（如 LUCY LIU）">
+<button class="ghost" onclick="doName(1)">搜名字</button>
+<button class="ghost" onclick="doBrowse(1)">逛所选地区</button>
+</div>
+<div class="meta" id="coverage" style="margin-top:10px"></div></div>
+<h2 class="serif" style="color:var(--red)">精选医师（有自述专长 · 已校正地址）</h2>
+<div id="featured"></div>
+<div id="claim" class="note" style="background:#eef4f1;border-color:var(--teal);color:var(--ink)">
+<h2 class="serif" style="color:var(--teal);margin-top:0">您是针灸师？认领您的档案</h2>
+<p>本站已为每位合格持照针灸师建档。认领之后，您可以：</p>
+<ul style="line-height:2;margin:8px 0">
+<li><b>进入按症状搜索</b>——患者搜"失眠、腰背痛"时能找到您（未认领的档案不会出现在症状搜索里）</li>
+<li><b>填写自述专长</b>——您擅长什么，自己说了算（标注"商家自述"）</li>
+<li><b>写 100–200 字自我介绍</b>——师承、经验、语言、诊所特色，显示在您的档案页</li>
+<li><b>挂上诊所官网链接</b>——名片卡和档案页都能直接跳到您的网站</li>
+<li><b>修正档案信息</b>——地址、电话有误或搬迁，认领后以您的为准</li>
+<li><b>获得"已认领维护"标记</b>——站长分清单里多一项硬指标，患者更信任</li>
+<li><b>优先开通获客工具</b>——患者咨询消息直接转推到您的手机；AI 前台客服 24 小时替您答常见问题、留住患者联系方式（即将推出，创始期认领者优先开通）</li>
+</ul>
+<p class="self">认领免费，不卖排名、不收认证费；好处全靠您把档案维护好。自我介绍与专长提交后经本站人工核对才发布（不得写疗效承诺）。</p>
+<a href="mailto:rootbrodapp@gmail.com?subject=认领档案申请&body=姓名：%0A执照号：%0A诊所名称：%0A联系电话：%0A要补充/修正的内容："><button>提交认领申请</button></a>
+</div>
+</section>
+<section id="v-results" class="hidden">
+<span class="back" onclick="go('home')">← 返回搜索</span>
+<h2 class="serif" id="r-title" style="color:var(--red)"></h2>
+<div class="count" id="r-count"></div>
+<div id="r-list"></div>
+<div class="pager"><button id="pg-prev" onclick="turn(-1)">上一页</button><span id="pg-info"></span><button id="pg-next" onclick="turn(1)">下一页</button></div>
+</section>
+<section id="v-profile" class="hidden">
+<span class="back" onclick="go('results')">← 返回结果</span>
+<div id="p-body"></div>
+</section>
+</main>
+<footer>本网站只提供医师执照与公开信息整理，不诊断、不开方、不承诺疗效。就医请面诊。<br>执照数据来源：各州官方机构核验；专长为商家自述，未经本站核验。</footer>
+<script>
+const AREA={},STATES={};let coverage=[],lastQuery=null,curPage=1,curTotal=0;
+const SYMPTOMS=["头痛","失眠","焦虑","颈肩痛","腰背痛","坐骨神经痛","消化不良","妇科/不孕","过敏","面瘫","减肥","运动损伤","美容","男性健康","肿瘤支持","孕产"];
+const $=id=>document.getElementById(id);
+function go(v){["home","results","profile"].forEach(x=>$("v-"+x).classList.toggle("hidden",x!==v));window.scrollTo(0,0)}
+function years(s){if(!s)return"—";return Math.max(0,Math.floor((Date.now()-new Date(s))/3.156e10))}
+async function api(path){const r=await fetch(path);return r.json()}
+function card(p){let t=(p.cats||[]).map(c=>`<span class="tag">${c}</span>`).join("");
+return `<div class="card" onclick="profile('${p.lic}')"><h3>${p.name}<span class="badge">执照已核验</span>${p.claimed?'<span class="badge" style="background:var(--gold)">已认领</span>':""}</h3>
+<div class="meta">${AREA[p.area]||p.area} · ${p.addr||"地址待认领确认"}${p.zip?" "+p.zip:""}${p.dist!=null?` · <b>距你约 ${p.dist} 英里</b>`:""}<br>电话 ${p.phone||"—"}${p.rating?" · "+p.rating+"（参考）":""} · 执业 ${years(p.since)} 年${p.website?' · <a href="'+p.website+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">诊所官网</a>':""}</div>
+${t?`<div>${t} <span class="self">商家自述</span></div>`:""}</div>`}
+async function runQuery(title,params,page){
+params.page=page;curPage=page;
+const qs=new URLSearchParams(params).toString();
+const d=await api("/api/search?"+qs);
+if(d.error==="zip_unknown"){$("r-title").textContent=title;$("r-count").textContent="这个 ZIP 暂时查不到坐标，换个附近的 ZIP 试试。";$("r-list").innerHTML="";$("pg-info").textContent="";go("results");return}
+curTotal=d.total||0;lastQuery={title,params};
+$("r-title").textContent=title;
+$("r-count").textContent=curTotal?`共 ${curTotal} 位 · 每页 10 位，翻页查看（名单不全量展示）`:"没有符合的结果。换个症状或地区试试——或等更多医师认领补填专长。";
+$("r-list").innerHTML=(d.results||[]).map(card).join("");
+$("pg-info").textContent=` 第 ${curPage} / ${Math.max(1,Math.ceil(curTotal/10))} 页 `;
+$("pg-prev").disabled=curPage<=1;$("pg-next").disabled=curPage*10>=curTotal;go("results")}
+function turn(d){if(lastQuery)runQuery(lastQuery.title,lastQuery.params,curPage+d)}
+function doZip(page){const z=$("q-zip").value.trim();if(!/^\d{5}$/.test(z)){alert("输入 5 位 ZIP");return}
+runQuery(`ZIP ${z} 附近`,{mode:"zip",zip:z,radius:$("q-radius").value,symptom:$("q-sym").value},page)}
+function doSymptom(page){const sym=$("q-sym2").value;if(!sym){alert("先选一个症状");return}
+const st=$("q-state").value,city=$("q-city").value;
+runQuery(`按症状找：${sym}${city?" · "+(AREA[city]||city):st?" · "+(STATES[st]||st):""}`,{mode:"area",state:st,city,symptom:sym},page)}
+function doName(page){const q=$("q-name").value.trim();if(!q){alert("输入名字");return}
+runQuery(`按名字找：${q.toUpperCase()}`,{mode:"name",q},page)}
+function doBrowse(page){const city=$("q-city").value,st=$("q-state").value;
+if(!city&&!st){alert("先选州和城市");return}
+runQuery(`${city?(AREA[city]||city):(STATES[st]||st)}针灸师（精选在前）`,{mode:"area",state:st,city},page)}
+async function profile(lic){const p=await api("/api/doctor?lic="+lic);if(p.error){alert("档案不存在");return}
+let cats=p.cats?`<h3 class="serif" style="color:var(--red)">自述专长</h3><div>${p.cats.map(c=>`<span class="tag">${c}</span>`).join("")}</div><p class="meta">${p.claim||""}</p><p class="self">来源：${p.source||""} · 商家自述，未经本站核验；本站不背书疗效。</p>`:`<h3 class="serif" style="color:var(--red)">自述专长</h3><p class="meta">该医师尚未留下自述专长。认领本页后可补填，补填后即可被按症状搜到。</p>`;
+let bio=p.bio?`<h3 class="serif" style="color:var(--red)">自我介绍</h3><p class="meta">${p.bio}</p><p class="self">医师本人提供，经本站核对后发布。</p>`:"";
+let claimBox=p.claimed?"":`<div class="note" style="margin-top:14px">这是您本人的档案？<a href="/find/#claim">认领它</a>——补上自述专长、100–200 字自我介绍和诊所官网链接，还能进入按症状搜索。</div>`;
+$("p-body").innerHTML=`<div class="card" style="cursor:default"><h3 style="font-size:24px">${p.name}<span class="badge">执照已核验</span>${p.claimed?'<span class="badge" style="background:var(--gold)">已认领</span>':""}</h3>
+<div class="meta">${AREA[p.area]||p.area} · ${p.addr||"地址待认领确认"} ${p.zip||""}<br>电话 ${p.phone||"—"}${p.rating?"<br>"+p.rating+"（参考）":""}${p.website?`<br>诊所官网：<a href="${p.website}" target="_blank" rel="noopener">${p.website}</a>`:""}</div>
+<h3 class="serif" style="color:var(--red)">本站核验（站长分 · 只记硬事实）</h3>
+<ul class="check">
+<li><span class="ok">✓</span> 执照查实：${STATES[p.state]||p.state}针灸执照 #${p.lic}（州官方机构核验）</li>
+<li><span class="ok">✓</span> 当前注册有效，至 ${p.exp}</li>
+<li><span class="ok">✓</span> 无任何处分记录</li>
+<li><span class="ok">✓</span> 执业年限：${years(p.since)} 年（${p.since} 发照）</li>
+<li>${p.claimed?'<span class="ok">✓</span>':'<span style="color:#b00">○</span>'} 已认领维护：${p.claimed?"是":"否（待认领）"}</li>
+<li>${p.cats?'<span class="ok">✓</span>':'<span style="color:#b00">○</span>'} 专长自述：${p.cats?"已收录（见下）":"暂无（待认领补填）"}</li>
+</ul>${bio}${cats}${claimBox}
+<p class="self">主观服务评价不在站长分内；本站不诊断、不开方、不承诺疗效。</p></div>`;go("profile")}
+function fillCities(){const st=$("q-state").value,c=$("q-city");c.innerHTML='<option value="">全部城市</option>';
+const s=coverage.find(x=>x.code===st);(s?s.areas:coverage.flatMap(x=>x.areas)).forEach(a=>{const o=document.createElement("option");o.value=a.key;o.textContent=a.label;c.appendChild(o)})}
+(async()=>{const d=await api("/api/search?mode=coverage");coverage=d.states||[];
+coverage.forEach(s=>{STATES[s.code]=s.label;s.areas.forEach(a=>AREA[a.key]=a.label);
+const o=document.createElement("option");o.value=s.code;o.textContent=s.label;$("q-state").appendChild(o)});
+if(coverage.length){$("q-state").value=coverage[0].code;fillCities();
+$("coverage").textContent="已开通："+coverage.map(s=>s.label+"（"+s.areas.map(a=>a.label).join(" · ")+"）").join("；")}
+const sel=$("q-sym"),sel2=$("q-sym2");SYMPTOMS.forEach(s=>{[sel,sel2].forEach(el=>{const o=document.createElement("option");o.value=s;o.textContent=s;el.appendChild(o)})});
+$("chips").innerHTML=SYMPTOMS.slice(0,10).map(s=>`<span class="chip" onclick="$('q-sym2').value='${s}';doSymptom(1)">${s}</span>`).join("");
+const f=await api("/api/search?mode=featured");$("featured").innerHTML=(f.results||[]).map(card).join("")})();
+</script></body></html>
