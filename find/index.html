@@ -87,7 +87,7 @@ footer{color:#8a8171;font-size:12px;text-align:center;padding:20px;line-height:1
 <li><b>优先开通获客工具</b>——患者咨询消息直接转推到您的手机；AI 前台客服 24 小时替您答常见问题、留住患者联系方式（即将推出，创始期认领者优先开通）</li>
 </ul>
 <p class="self">认领免费，不卖排名、不收认证费；好处全靠您把档案维护好。自我介绍与专长提交后经本站人工核对才发布（不得写疗效承诺）。</p>
-<a href="mailto:rootbrodapp@gmail.com?subject=认领档案申请&body=姓名：%0A执照号：%0A诊所名称：%0A联系电话：%0A要补充/修正的内容："><button>提交认领申请</button></a>
+<button onclick="openClaimForm('')">提交认领申请</button> <span class="self">点开填写认领表单，两分钟完成，免登录；也可以发邮件到 rootbrodapp@gmail.com</span>
 </div>
 </section>
 <section id="v-results" class="hidden">
@@ -109,6 +109,9 @@ const SYMPTOMS=["头痛","失眠","焦虑","颈肩痛","腰背痛","坐骨神经
 const $=id=>document.getElementById(id);
 function go(v){["home","results","profile"].forEach(x=>$("v-"+x).classList.toggle("hidden",x!==v));window.scrollTo(0,0)}
 function years(s){if(!s)return"—";return Math.max(0,Math.floor((Date.now()-new Date(s))/3.156e10))}
+const FORM_BASE="https://docs.google.com/forms/d/e/1FAIpQLSf_kh7YX-DCvnrd3wDFcXZCpNXm8ahf8BP4hiQZtPFfbViPiA/viewform";
+window._claimName="";
+function openClaimForm(lic){let u=FORM_BASE+"?usp=pp_url";if(lic){u+="&entry.1512303843="+encodeURIComponent(lic);if(window._claimName)u+="&entry.1668858547="+encodeURIComponent(window._claimName)}window.open(u,"_blank","width=720,height=840,noopener")}
 async function api(path){const r=await fetch(path);return r.json()}
 function card(p){let t=(p.cats||[]).map(c=>`<span class="tag">${c}</span>`).join("");
 return `<div class="card" onclick="profile('${p.lic}')"><h3>${p.name}<span class="badge">执照已核验</span>${p.claimed?'<span class="badge" style="background:var(--gold)">已认领</span>':""}</h3>
@@ -136,10 +139,10 @@ runQuery(`按名字找：${q.toUpperCase()}`,{mode:"name",q},page)}
 function doBrowse(page){const city=$("q-city").value,st=$("q-state").value;
 if(!city&&!st){alert("先选州和城市");return}
 runQuery(`${city?(AREA[city]||city):(STATES[st]||st)}针灸师（精选在前）`,{mode:"area",state:st,city},page)}
-async function profile(lic){const p=await api("/api/doctor?lic="+lic);if(p.error){alert("档案不存在");return}
+async function profile(lic){window._claimName="";const p=await api("/api/doctor?lic="+lic);if(p.error){alert("档案不存在");return}window._claimName=p.name||"";
 let cats=p.cats?`<h3 class="serif" style="color:var(--red)">自述专长</h3><div>${p.cats.map(c=>`<span class="tag">${c}</span>`).join("")}</div><p class="meta">${p.claim||""}</p><p class="self">来源：${p.source||""} · 商家自述，未经本站核验；本站不背书疗效。</p>`:`<h3 class="serif" style="color:var(--red)">自述专长</h3><p class="meta">该医师尚未留下自述专长。认领本页后可补填，补填后即可被按症状搜到。</p>`;
 let bio=p.bio?`<h3 class="serif" style="color:var(--red)">自我介绍</h3><p class="meta">${p.bio}</p><p class="self">医师本人提供，经本站核对后发布。</p>`:"";
-let claimBox=p.claimed?"":`<div class="note" style="margin-top:14px">这是您本人的档案？<a href="mailto:rootbrodapp@gmail.com?subject=认领档案申请（执照号 ${p.lic}）&body=姓名：%0A执照号：${p.lic}%0A诊所名称：%0A联系电话：%0A要补充/修正的内容：">点此发邮件认领</a>——补上自述专长、100–200 字自我介绍和诊所官网链接，还能进入按症状搜索。</div>`;
+let claimBox=p.claimed?"":`<div class="note" style="margin-top:14px">这是您本人的档案？<a href="#" onclick="openClaimForm('${p.lic}');return false">点此填写认领表单</a>（姓名与执照号已为您预填）——补上自述专长、100–200 字自我介绍和诊所官网链接，还能进入按症状搜索。</div>`;
 $("p-body").innerHTML=`<div class="card" style="cursor:default"><h3 style="font-size:24px">${p.name}<span class="badge">执照已核验</span>${p.claimed?'<span class="badge" style="background:var(--gold)">已认领</span>':""}</h3>
 <div class="meta">${AREA[p.area]||p.area} · ${p.addr||"地址待认领确认"} ${p.zip||""}<br>电话 ${p.phone||"—"}${p.rating?"<br>"+p.rating+"（参考）":""}${p.website?`<br>诊所官网：<a href="${p.website}" target="_blank" rel="noopener">${p.website}</a>`:""}</div>
 <h3 class="serif" style="color:var(--red)">本站核验（站长分 · 只记硬事实）</h3>
