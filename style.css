@@ -1,6 +1,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#1a1612;--ink-soft:#4a453f;--ink-muted:#8a857d;
+  --ink:#1a1612;--ink-soft:#4a453f;--ink-muted:#6b675f;
   --paper:#faf8f4;--paper-warm:#f0ebe0;--paper-card:#fffdf9;
   --brush:#8b3a2a;--brush-deep:#6e2c20;--brush-light:rgba(139,58,42,.08);
   --gold:#b8942a;--gold-light:rgba(184,148,42,.12);
