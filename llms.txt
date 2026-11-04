@@ -9,6 +9,8 @@ TCMUS.net 帮北美华人解决两个问题：看中医怕被坑（找谁），�
 ## 工具：一键查穴位
 
 - [穴位自查](https://tcmus.net/xuewei)：输入哪里不舒服，一键给出对应穴位与按摩方法（工具型页面）。
+- 图文穴位页（每页含禁忌与"何时必须就医/去急诊"清单，不承诺疗效）：[头疼 · 合谷 LI4](https://tcmus.net/xuewei/hegu.html)、[胃不舒服 · 足三里 ST36](https://tcmus.net/xuewei/zusanli.html)、[失眠 · 涌泉 KI1](https://tcmus.net/xuewei/yongquan.html)、[肩颈痛 · 肩井 GB21](https://tcmus.net/xuewei/jianjing.html)、[腰痛 · 委中 BL40](https://tcmus.net/xuewei/weizhong.html)、[便秘 · 天枢 ST25](https://tcmus.net/xuewei/tianshu.html)、[痛经 · 三阴交 SP6](https://tcmus.net/xuewei/sanyinjiao.html)、[焦虑失眠 · 神门 HT7](https://tcmus.net/xuewei/shenmen.html)、[眼疲劳 · 攒竹 BL2](https://tcmus.net/xuewei/zanzhu.html)、[感冒鼻塞 · 迎香 LI20](https://tcmus.net/xuewei/yingxiang.html)、[胃胀 · 中脘 CV12](https://tcmus.net/xuewei/zhongwan.html)、[头晕 · 风池 GB20](https://tcmus.net/xuewei/fengchi.html)、[手腕痛 · 内关 PC6](https://tcmus.net/xuewei/neiguan.html)、[膝痛 · 犊鼻 ST35](https://tcmus.net/xuewei/dubi.html)、[经前不适 · 太冲 LR3](https://tcmus.net/xuewei/taichong.html)。
+- [找针灸师](https://tcmus.net/find/)：按距离、按症状查找经州官方机构逐人核验执照的针灸师（无处分记录才入选）。
 
 ## 中医入门（教育系列）
 
@@ -33,6 +35,18 @@ TCMUS.net 帮北美华人解决两个问题：看中医怕被坑（找谁），�
 - [法拉盛中医](https://tcmus.net/zhongyi/flushing)：法拉盛 244 位核验针灸师；已知公开价：甯濟堂官网现金 $60/次（待复核）。
 - [曼哈顿中医](https://tcmus.net/zhongyi/manhattan)：曼哈顿 321 位核验针灸师。
 - [唐人街中医](https://tcmus.net/zhongyi/chinatown)：唐人街（华埠）118 位核验针灸师（按执业地址邮编 10002/10013/10038 统计）。
+
+## 问题解答（针灸保险、Medicare、价格、查执照）
+
+- [问题解答](https://tcmus.net/wenti/)：四个常见问题，事实带来源，没把握处写"请向保险公司/官方确认"。
+- [针灸保险能报销吗](https://tcmus.net/wenti/zhenjiu-baoxian.html)：问保险公司与诊所的清单、网外报销、HSA/FSA。
+- [Medicare 是否覆盖针灸](https://tcmus.net/wenti/medicare-zhenjiu.html)：Original Medicare 仅覆盖慢性下腰痛（CMS NCD 30.3.3），提供者资格与 Medicare Advantage 请向 Medicare 确认。
+- [纽约针灸多少钱一次](https://tcmus.net/wenti/newyork-zhenjiu-jiage.html)：无统一收费标准，不编区间，仅列已知公开价。
+- [如何查针灸师（L.Ac.）执照](https://tcmus.net/wenti/cha-lac-zhizhao.html)：纽约州教育厅（NYSED）执照核验步骤。
+
+## 经典之方知识库
+
+- [经典之方](https://tcmus.net/tcm/)：本草与专栏；每个本草页和专栏文末附[伤寒论六经导航](https://rootbro.com/shanghan/)（外部站点，学习参考）。
 
 ## 关于与安全声明
 
